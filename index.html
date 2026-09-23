@@ -836,6 +836,20 @@
         }
 
         /* VALUE PROPS */
+        /* VALUE PROPS 4-col grid */
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+        @media (min-width: 600px) {
+            .value-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .value-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
         .value-card {
             padding: 3rem 2rem;
             text-align: center;
@@ -1402,7 +1416,7 @@
                     <h2 class="grad-text">Está comprando velocidade.</h2>
                 </div>
 
-                <div class="grid-cards">
+                <div class="value-grid">
                     <div class="card-basic value-card">
                         <div class="value-icon">⚡</div>
                         <h3>VELOCIDADE</h3>
