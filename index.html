@@ -1082,6 +1082,181 @@
             font-size: 1rem;
         }
 
+        /* ═══════════════════════════════════════
+           VIDEO GALLERY SECTION
+        ═══════════════════════════════════════ */
+        .video-section {
+            background: var(--dark2);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .video-section .header-center p {
+            max-width: 52ch;
+        }
+
+        .vg-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .vg-featured {
+            grid-column: 1 / -1;
+        }
+
+        @media (min-width: 768px) {
+            .vg-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto auto;
+                gap: 1.25rem;
+            }
+            .vg-featured {
+                grid-column: 1 / 2;
+                grid-row: 1 / 3;
+            }
+            .vg-side-top { grid-column: 2/3; grid-row: 1/2; }
+            .vg-side-top2 { grid-column: 3/4; grid-row: 1/2; }
+            .vg-bottom {
+                grid-column: 2 / 4;
+                grid-row: 2 / 3;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.25rem;
+            }
+        }
+
+        .vcard {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--dark3);
+            border: 1px solid var(--border);
+            aspect-ratio: 9/16;
+            cursor: pointer;
+            transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .vcard:hover {
+            transform: translateY(-4px) scale(1.015);
+            border-color: rgba(255,45,85,0.4);
+            box-shadow: 0 20px 60px rgba(255,45,85,0.1), 0 0 0 1px rgba(147,51,234,0.2);
+        }
+
+        .vcard video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .vcard::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 55%;
+            background: linear-gradient(to top, rgba(5,2,14,0.92) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .vcard::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: var(--grad);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .vcard:hover::before { opacity: 0.5; }
+
+        .vcard-badge {
+            position: absolute;
+            top: 10px; right: 10px;
+            z-index: 4;
+            background: rgba(5,2,14,0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 3px 9px;
+            font-size: 0.6rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--pink);
+        }
+
+        .vcard-info {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%;
+            padding: 0.875rem;
+            z-index: 3;
+        }
+
+        .vcard-label {
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .vcard-sub {
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--muted);
+            margin-top: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .vg-featured .vcard-label { font-size: 1.25rem; }
+
+        .vcard-play {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%) scale(0);
+            z-index: 5;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .vcard.paused .vcard-play {
+            transform: translate(-50%,-50%) scale(1);
+            opacity: 1;
+        }
+
+        .vg-cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .vg-cta p {
+            max-width: 44ch;
+            margin: 0 auto 2rem;
+        }
+
         /* FOOTER */
         footer {
             background: var(--dark3);
@@ -1567,6 +1742,177 @@
             </div>
         </section>
 
+        <!-- ═══════════════════════════════════════
+             VIDEO GALLERY — exemplos do que criar
+        ═══════════════════════════════════════ -->
+        <section class="video-section" id="exemplos">
+            <div class="container reveal">
+                <div class="header-center">
+                    <span class="eyebrow">EXEMPLOS REAIS</span>
+                    <h2>Olha o que você pode criar.</h2>
+                    <p>Do POV ao unboxing — diferentes formatos de conteúdo gerados com prompts prontos para usar.</p>
+                </div>
+
+                <div class="vg-grid">
+
+                    <!-- FEATURED: Selfie — coluna esquerda, 2 linhas de altura -->
+                    <div class="vg-featured">
+                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato Selfie criado com prompts CRIA Shop Pack">
+                            <span class="vcard-badge">SELFIE</span>
+                            <video
+                                src="videos/selfie.mp4"
+                                poster="videos/posters/selfie.jpg"
+                                autoplay muted loop playsinline
+                                preload="metadata"
+                                loading="lazy"
+                                data-vcard
+                            ></video>
+                            <div class="vcard-play" aria-hidden="true">▶</div>
+                            <div class="vcard-info">
+                                <div class="vcard-label">Selfie</div>
+                                <div class="vcard-sub">CRIA SHOP PACK</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SIDE TOP: Espelho -->
+                    <div class="vg-side-top">
+                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato Espelho">
+                            <span class="vcard-badge">ESPELHO</span>
+                            <video
+                                src="videos/espelho.mp4"
+                                poster="videos/posters/espelho.jpg"
+                                autoplay muted loop playsinline
+                                preload="metadata"
+                                loading="lazy"
+                                data-vcard
+                            ></video>
+                            <div class="vcard-play" aria-hidden="true">▶</div>
+                            <div class="vcard-info">
+                                <div class="vcard-label">Espelho</div>
+                                <div class="vcard-sub">CRIA SHOP PACK</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SIDE TOP 2: POV 01 -->
+                    <div class="vg-side-top2">
+                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato POV">
+                            <span class="vcard-badge">POV</span>
+                            <video
+                                src="videos/pov-01.mp4"
+                                poster="videos/posters/pov-01.jpg"
+                                autoplay muted loop playsinline
+                                preload="metadata"
+                                loading="lazy"
+                                data-vcard
+                            ></video>
+                            <div class="vcard-play" aria-hidden="true">▶</div>
+                            <div class="vcard-info">
+                                <div class="vcard-label">POV</div>
+                                <div class="vcard-sub">CRIA SHOP PACK</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOTTOM ROW: 3 cards side by side (dentro de vg-bottom) -->
+                    <div class="vg-bottom">
+                        <!-- Unboxing 01 -->
+                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato Unboxing">
+                            <span class="vcard-badge">UNBOXING</span>
+                            <video
+                                src="videos/unboxing-01.mp4"
+                                poster="videos/posters/unboxing-01.jpg"
+                                muted loop playsinline
+                                preload="none"
+                                loading="lazy"
+                                data-vcard
+                            ></video>
+                            <div class="vcard-play" aria-hidden="true">▶</div>
+                            <div class="vcard-info">
+                                <div class="vcard-label">Unboxing</div>
+                                <div class="vcard-sub">CRIA SHOP PACK</div>
+                            </div>
+                        </div>
+
+                        <!-- Movimento -->
+                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato Movimento">
+                            <span class="vcard-badge">MOVIMENTO</span>
+                            <video
+                                src="videos/movimento.mp4"
+                                poster="videos/posters/movimento.jpg"
+                                muted loop playsinline
+                                preload="none"
+                                loading="lazy"
+                                data-vcard
+                            ></video>
+                            <div class="vcard-play" aria-hidden="true">▶</div>
+                            <div class="vcard-info">
+                                <div class="vcard-label">Movimento</div>
+                                <div class="vcard-sub">CRIA SHOP PACK</div>
+                            </div>
+                        </div>
+
+                        <!-- Universal -->
+                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato Universal">
+                            <span class="vcard-badge">UNIVERSAL</span>
+                            <video
+                                src="videos/prompt-universal.mp4"
+                                poster="videos/posters/prompt-universal.jpg"
+                                muted loop playsinline
+                                preload="none"
+                                loading="lazy"
+                                data-vcard
+                            ></video>
+                            <div class="vcard-play" aria-hidden="true">▶</div>
+                            <div class="vcard-info">
+                                <div class="vcard-label">Universal</div>
+                                <div class="vcard-sub">CRIA SHOP PACK</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /vg-grid -->
+
+                <!-- segunda linha de cards -->
+                <div class="vg-grid" style="margin-top:1.25rem">
+                    <div class="vcard" role="img" aria-label="Exemplo POV 2">
+                        <span class="vcard-badge">POV</span>
+                        <video src="videos/pov-02.mp4" poster="videos/posters/pov-02.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">POV</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+                    <div class="vcard" role="img" aria-label="Exemplo POV 3">
+                        <span class="vcard-badge">POV</span>
+                        <video src="videos/pov-03.mp4" poster="videos/posters/pov-03.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">POV</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+                    <div class="vcard" role="img" aria-label="Exemplo POV 4">
+                        <span class="vcard-badge">POV</span>
+                        <video src="videos/pov-04.mp4" poster="videos/posters/pov-04.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">POV</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+                    <div class="vcard" role="img" aria-label="Exemplo Unboxing 2">
+                        <span class="vcard-badge">UNBOXING</span>
+                        <video src="videos/unboxing-02.mp4" poster="videos/posters/unboxing-02.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">Unboxing</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+                </div>
+
+                <!-- CTA da seção -->
+                <div class="vg-cta reveal">
+                    <p>Esses são só alguns exemplos. Imagine o que você cria com 100 prompts prontos.</p>
+                    <a href="https://pay.kiwify.com.br/V5EJTYN" target="_blank" rel="noopener" class="btn-primary" data-track="cta-click" style="display:inline-flex;">
+                        QUERO O CRIA SHOP PACK &rarr;
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
         <!-- OFFER SECTION -->
         <section class="offer-section">
             <div class="container reveal">
@@ -1837,6 +2183,49 @@
                     }
                 });
             });
+
+            // ─── VIDEO CARDS: lazy autoplay + pause on exit ──────────────
+            const vcards = document.querySelectorAll('[data-vcard]');
+
+            if (vcards.length > 0) {
+                const videoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const video = entry.target;
+                        const card  = video.closest('.vcard');
+                        if (entry.isIntersecting) {
+                            // Load src if not loaded yet (preload=none)
+                            if (!video.src && video.dataset.src) {
+                                video.src = video.dataset.src;
+                            }
+                            video.play().catch(() => {});
+                            if (card) card.classList.remove('paused');
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }, {
+                    threshold: 0.2,
+                    rootMargin: '0px 0px 0px 0px'
+                });
+
+                vcards.forEach(video => {
+                    videoObserver.observe(video);
+
+                    // Click/touch: toggle pause
+                    const card = video.closest('.vcard');
+                    if (card) {
+                        card.addEventListener('click', () => {
+                            if (video.paused) {
+                                video.play().catch(() => {});
+                                card.classList.remove('paused');
+                            } else {
+                                video.pause();
+                                card.classList.add('paused');
+                            }
+                        });
+                    }
+                });
+            }
         });
     </script>
 </body>
