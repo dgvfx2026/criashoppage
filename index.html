@@ -1098,33 +1098,22 @@
 
         .vg-grid {
             display: grid;
-            gap: 1rem;
+            gap: 0.75rem;
             margin-top: 3rem;
             grid-template-columns: repeat(2, 1fr);
         }
 
-        .vg-featured {
-            grid-column: 1 / -1;
-        }
-
-        @media (min-width: 768px) {
+        @media (min-width: 640px) {
             .vg-grid {
                 grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: auto auto;
-                gap: 1.25rem;
+                gap: 1rem;
             }
-            .vg-featured {
-                grid-column: 1 / 2;
-                grid-row: 1 / 3;
-            }
-            .vg-side-top { grid-column: 2/3; grid-row: 1/2; }
-            .vg-side-top2 { grid-column: 3/4; grid-row: 1/2; }
-            .vg-bottom {
-                grid-column: 2 / 4;
-                grid-row: 2 / 3;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.25rem;
+        }
+
+        @media (min-width: 1024px) {
+            .vg-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 1rem;
             }
         }
 
@@ -1491,6 +1480,102 @@
             </div>
         </section>
 
+        <!-- ═══════════════════════════════════════
+             VIDEO GALLERY — exemplos do que criar
+        ═══════════════════════════════════════ -->
+        <section class="video-section" id="exemplos">
+            <div class="container reveal">
+                <div class="header-center">
+                    <span class="eyebrow">EXEMPLOS REAIS</span>
+                    <h2>Olha o que você pode criar.</h2>
+                    <p>Do POV ao unboxing — diferentes formatos de conteúdo gerados com prompts prontos para usar.</p>
+                </div>
+
+                <div class="vg-grid">
+
+                    <div class="vcard" role="img" aria-label="Exemplo Selfie">
+                        <span class="vcard-badge">SELFIE</span>
+                        <video src="videos/selfie.mp4" poster="videos/posters/selfie.jpg" autoplay muted loop playsinline preload="metadata" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">Selfie</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+
+                    <div class="vcard" role="img" aria-label="Exemplo Espelho">
+                        <span class="vcard-badge">ESPELHO</span>
+                        <video src="videos/espelho.mp4" poster="videos/posters/espelho.jpg" autoplay muted loop playsinline preload="metadata" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">Espelho</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+
+                    <div class="vcard" role="img" aria-label="Exemplo POV 1">
+                        <span class="vcard-badge">POV</span>
+                        <video src="videos/pov-01.mp4" poster="videos/posters/pov-01.jpg" autoplay muted loop playsinline preload="metadata" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">POV</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+
+                    <div class="vcard" role="img" aria-label="Exemplo Unboxing 1">
+                        <span class="vcard-badge">UNBOXING</span>
+                        <video src="videos/unboxing-01.mp4" poster="videos/posters/unboxing-01.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">Unboxing</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+
+                    <div class="vcard" role="img" aria-label="Exemplo Movimento">
+                        <span class="vcard-badge">MOVIMENTO</span>
+                        <video src="videos/movimento.mp4" poster="videos/posters/movimento.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">Movimento</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+
+                    <div class="vcard" role="img" aria-label="Exemplo POV 2">
+                        <span class="vcard-badge">POV</span>
+                        <video src="videos/pov-02.mp4" poster="videos/posters/pov-02.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">POV</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+
+                    <div class="vcard" role="img" aria-label="Exemplo Universal">
+                        <span class="vcard-badge">UNIVERSAL</span>
+                        <video src="videos/prompt-universal.mp4" poster="videos/posters/prompt-universal.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">Universal</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+
+                    <div class="vcard" role="img" aria-label="Exemplo POV 3">
+                        <span class="vcard-badge">POV</span>
+                        <video src="videos/pov-03.mp4" poster="videos/posters/pov-03.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">POV</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+
+                    <div class="vcard" role="img" aria-label="Exemplo Unboxing 2">
+                        <span class="vcard-badge">UNBOXING</span>
+                        <video src="videos/unboxing-02.mp4" poster="videos/posters/unboxing-02.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">Unboxing</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+
+                    <div class="vcard" role="img" aria-label="Exemplo POV 4">
+                        <span class="vcard-badge">POV</span>
+                        <video src="videos/pov-04.mp4" poster="videos/posters/pov-04.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
+                        <div class="vcard-play" aria-hidden="true">▶</div>
+                        <div class="vcard-info"><div class="vcard-label">POV</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
+                    </div>
+
+                </div><!-- /vg-grid -->
+
+                <!-- CTA da seção -->
+                <div class="vg-cta reveal">
+                    <p>Esses são só alguns exemplos. Imagine o que você cria com 100 prompts prontos.</p>
+                    <a href="https://pay.kiwify.com.br/V5EJTYN" target="_blank" rel="noopener" class="btn-primary" data-track="cta-click" style="display:inline-flex;">
+                        QUERO O CRIA SHOP PACK &rarr;
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
         <!-- TRANSFORMATION SECTION -->
         <section class="transform-section">
             <div class="container reveal">
@@ -1741,178 +1826,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- ═══════════════════════════════════════
-             VIDEO GALLERY — exemplos do que criar
-        ═══════════════════════════════════════ -->
-        <section class="video-section" id="exemplos">
-            <div class="container reveal">
-                <div class="header-center">
-                    <span class="eyebrow">EXEMPLOS REAIS</span>
-                    <h2>Olha o que você pode criar.</h2>
-                    <p>Do POV ao unboxing — diferentes formatos de conteúdo gerados com prompts prontos para usar.</p>
-                </div>
-
-                <div class="vg-grid">
-
-                    <!-- FEATURED: Selfie — coluna esquerda, 2 linhas de altura -->
-                    <div class="vg-featured">
-                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato Selfie criado com prompts CRIA Shop Pack">
-                            <span class="vcard-badge">SELFIE</span>
-                            <video
-                                src="videos/selfie.mp4"
-                                poster="videos/posters/selfie.jpg"
-                                autoplay muted loop playsinline
-                                preload="metadata"
-                                loading="lazy"
-                                data-vcard
-                            ></video>
-                            <div class="vcard-play" aria-hidden="true">▶</div>
-                            <div class="vcard-info">
-                                <div class="vcard-label">Selfie</div>
-                                <div class="vcard-sub">CRIA SHOP PACK</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SIDE TOP: Espelho -->
-                    <div class="vg-side-top">
-                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato Espelho">
-                            <span class="vcard-badge">ESPELHO</span>
-                            <video
-                                src="videos/espelho.mp4"
-                                poster="videos/posters/espelho.jpg"
-                                autoplay muted loop playsinline
-                                preload="metadata"
-                                loading="lazy"
-                                data-vcard
-                            ></video>
-                            <div class="vcard-play" aria-hidden="true">▶</div>
-                            <div class="vcard-info">
-                                <div class="vcard-label">Espelho</div>
-                                <div class="vcard-sub">CRIA SHOP PACK</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SIDE TOP 2: POV 01 -->
-                    <div class="vg-side-top2">
-                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato POV">
-                            <span class="vcard-badge">POV</span>
-                            <video
-                                src="videos/pov-01.mp4"
-                                poster="videos/posters/pov-01.jpg"
-                                autoplay muted loop playsinline
-                                preload="metadata"
-                                loading="lazy"
-                                data-vcard
-                            ></video>
-                            <div class="vcard-play" aria-hidden="true">▶</div>
-                            <div class="vcard-info">
-                                <div class="vcard-label">POV</div>
-                                <div class="vcard-sub">CRIA SHOP PACK</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- BOTTOM ROW: 3 cards side by side (dentro de vg-bottom) -->
-                    <div class="vg-bottom">
-                        <!-- Unboxing 01 -->
-                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato Unboxing">
-                            <span class="vcard-badge">UNBOXING</span>
-                            <video
-                                src="videos/unboxing-01.mp4"
-                                poster="videos/posters/unboxing-01.jpg"
-                                muted loop playsinline
-                                preload="none"
-                                loading="lazy"
-                                data-vcard
-                            ></video>
-                            <div class="vcard-play" aria-hidden="true">▶</div>
-                            <div class="vcard-info">
-                                <div class="vcard-label">Unboxing</div>
-                                <div class="vcard-sub">CRIA SHOP PACK</div>
-                            </div>
-                        </div>
-
-                        <!-- Movimento -->
-                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato Movimento">
-                            <span class="vcard-badge">MOVIMENTO</span>
-                            <video
-                                src="videos/movimento.mp4"
-                                poster="videos/posters/movimento.jpg"
-                                muted loop playsinline
-                                preload="none"
-                                loading="lazy"
-                                data-vcard
-                            ></video>
-                            <div class="vcard-play" aria-hidden="true">▶</div>
-                            <div class="vcard-info">
-                                <div class="vcard-label">Movimento</div>
-                                <div class="vcard-sub">CRIA SHOP PACK</div>
-                            </div>
-                        </div>
-
-                        <!-- Universal -->
-                        <div class="vcard" role="img" aria-label="Exemplo de vídeo formato Universal">
-                            <span class="vcard-badge">UNIVERSAL</span>
-                            <video
-                                src="videos/prompt-universal.mp4"
-                                poster="videos/posters/prompt-universal.jpg"
-                                muted loop playsinline
-                                preload="none"
-                                loading="lazy"
-                                data-vcard
-                            ></video>
-                            <div class="vcard-play" aria-hidden="true">▶</div>
-                            <div class="vcard-info">
-                                <div class="vcard-label">Universal</div>
-                                <div class="vcard-sub">CRIA SHOP PACK</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!-- /vg-grid -->
-
-                <!-- segunda linha de cards -->
-                <div class="vg-grid" style="margin-top:1.25rem">
-                    <div class="vcard" role="img" aria-label="Exemplo POV 2">
-                        <span class="vcard-badge">POV</span>
-                        <video src="videos/pov-02.mp4" poster="videos/posters/pov-02.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
-                        <div class="vcard-play" aria-hidden="true">▶</div>
-                        <div class="vcard-info"><div class="vcard-label">POV</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
-                    </div>
-                    <div class="vcard" role="img" aria-label="Exemplo POV 3">
-                        <span class="vcard-badge">POV</span>
-                        <video src="videos/pov-03.mp4" poster="videos/posters/pov-03.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
-                        <div class="vcard-play" aria-hidden="true">▶</div>
-                        <div class="vcard-info"><div class="vcard-label">POV</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
-                    </div>
-                    <div class="vcard" role="img" aria-label="Exemplo POV 4">
-                        <span class="vcard-badge">POV</span>
-                        <video src="videos/pov-04.mp4" poster="videos/posters/pov-04.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
-                        <div class="vcard-play" aria-hidden="true">▶</div>
-                        <div class="vcard-info"><div class="vcard-label">POV</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
-                    </div>
-                    <div class="vcard" role="img" aria-label="Exemplo Unboxing 2">
-                        <span class="vcard-badge">UNBOXING</span>
-                        <video src="videos/unboxing-02.mp4" poster="videos/posters/unboxing-02.jpg" muted loop playsinline preload="none" loading="lazy" data-vcard></video>
-                        <div class="vcard-play" aria-hidden="true">▶</div>
-                        <div class="vcard-info"><div class="vcard-label">Unboxing</div><div class="vcard-sub">CRIA SHOP PACK</div></div>
-                    </div>
-                </div>
-
-                <!-- CTA da seção -->
-                <div class="vg-cta reveal">
-                    <p>Esses são só alguns exemplos. Imagine o que você cria com 100 prompts prontos.</p>
-                    <a href="https://pay.kiwify.com.br/V5EJTYN" target="_blank" rel="noopener" class="btn-primary" data-track="cta-click" style="display:inline-flex;">
-                        QUERO O CRIA SHOP PACK &rarr;
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
         <!-- OFFER SECTION -->
         <section class="offer-section">
             <div class="container reveal">
